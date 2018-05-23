@@ -87,10 +87,6 @@ public class AddMeasurementsServiceImpl implements AddMeasurementsService {
         return " No data for measuring station Id: " + statioId;
     }
 
-    private SynopticMeasurementDto emptyObj() {
-        return new SynopticMeasurementDto(9999, "->>no data available<<-", 9999.0, 9999.0, 9999.0, 9999.0);
-    }
-
     //@Transactional
     @Override
     public String addMeasurementsAllStations() {
@@ -122,5 +118,9 @@ public class AddMeasurementsServiceImpl implements AddMeasurementsService {
         DecimalFormat df2 = new DecimalFormat("###.###");
         double execution = (endTime1 - startTime1) / 60000.0;
         return "Measured time of downloading data: " + df2.format(execution) + " minutes\n" + mSDtoList.size() + " measurements added to data base correct";
+    }
+
+    private SynopticMeasurementDto emptyObj() {
+        return new SynopticMeasurementDto(9999, "->>no data available<<-", 9999.0, 9999.0, 9999.0, 9999.0);
     }
 }

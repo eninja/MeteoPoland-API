@@ -28,7 +28,7 @@ public class SwaggerConfig {
     private ApiInfo metaInfo() {
         return new ApiInfoBuilder().title("MeteoPolandAPI")
                                    .description("Air and weather stations in Poland")
-                                   .version("0.0.1")
+                                   .version("0.1")
                                    .contact(new Contact("eNinja", "http://www.meteo.eninja.pl", "meteo@eninja.pl"))
                                    .license("Apache License 2.0")
                                    .licenseUrl("https://www.apache.org/licenses/LICENSE-2.0")
