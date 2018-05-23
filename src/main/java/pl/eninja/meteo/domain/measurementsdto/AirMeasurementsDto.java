@@ -23,18 +23,18 @@ public class AirMeasurementsDto {
     @Override
     public int hashCode() {
 
-        return Objects.hash(getId(),
-                            getStCalcDate(),
-                            getStIndexLevel(),
-                            getSo2IndexLevel(),
-                            getSo2SourceDataDate(),
-                            getNo2IndexLevel(),
-                            getCoIndexLevel(),
-                            getCoSourceDataDate(),
-                            getPm10IndexLevel(),
-                            getPm25IndexLevel(),
-                            getO3IndexLevel(),
-                            getC6h6IndexLevel());
+        return Objects.hash(id,
+                            stCalcDate,
+                            stIndexLevel,
+                            so2IndexLevel,
+                            so2SourceDataDate,
+                            no2IndexLevel,
+                            coIndexLevel,
+                            coSourceDataDate,
+                            pm10IndexLevel,
+                            pm25IndexLevel,
+                            o3IndexLevel,
+                            c6h6IndexLevel);
     }
 
     @Override
@@ -42,25 +42,22 @@ public class AirMeasurementsDto {
         if (this == o) {
             return true;
         }
-        if (!(o instanceof AirMeasurementsDto)) {
+        if (o == null || getClass() != o.getClass()) {
             return false;
         }
         AirMeasurementsDto that = (AirMeasurementsDto) o;
-        return getId() == that.getId() && Objects.equals(getStCalcDate(), that.getStCalcDate()) && Objects.equals(
-                getStIndexLevel(),
-                that.getStIndexLevel()) && Objects.equals(getSo2IndexLevel(),
-                                                          that.getSo2IndexLevel()) && Objects.equals(
-                getSo2SourceDataDate(),
-                that.getSo2SourceDataDate()) && Objects.equals(getNo2IndexLevel(),
-                                                               that.getNo2IndexLevel()) && Objects.equals(
-                getCoIndexLevel(),
-                that.getCoIndexLevel()) && Objects.equals(getCoSourceDataDate(),
-                                                          that.getCoSourceDataDate()) && Objects.equals(
-                getPm10IndexLevel(),
-                that.getPm10IndexLevel()) && Objects.equals(getPm25IndexLevel(),
-                                                            that.getPm25IndexLevel()) && Objects.equals(getO3IndexLevel(),
-                                                                                                        that.getO3IndexLevel()) && Objects
-                .equals(getC6h6IndexLevel(), that.getC6h6IndexLevel());
+        return id == that.id && Objects.equals(stCalcDate, that.stCalcDate) && Objects.equals(stIndexLevel,
+                                                                                              that.stIndexLevel) && Objects
+                .equals(so2IndexLevel, that.so2IndexLevel) && Objects.equals(so2SourceDataDate,
+                                                                             that.so2SourceDataDate) && Objects.equals(
+                no2IndexLevel,
+                that.no2IndexLevel) && Objects.equals(coIndexLevel, that.coIndexLevel) && Objects.equals(
+                coSourceDataDate,
+                that.coSourceDataDate) && Objects.equals(pm10IndexLevel, that.pm10IndexLevel) && Objects.equals(
+                pm25IndexLevel,
+                that.pm25IndexLevel) && Objects.equals(o3IndexLevel,
+                                                       that.o3IndexLevel) && Objects.equals(c6h6IndexLevel,
+                                                                                            that.c6h6IndexLevel);
     }
 
     @Override

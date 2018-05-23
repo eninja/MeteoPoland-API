@@ -17,7 +17,7 @@ public class MeasuringStationDetails {
     public MeasuringStationDetails() {
     }
 
-    private MeasuringStationDetails(MeasuringStationDetailsBuilder builder) {
+    private MeasuringStationDetails(Builder builder) {
         this.city = builder.city;
         this.commune = builder.commune;
         this.district = builder.district;
@@ -66,34 +66,34 @@ public class MeasuringStationDetails {
         return voivodeship;
     }
 
-    public static class MeasuringStationDetailsBuilder {
+    public static class Builder {
         private Long id;
         private String city;
         private String commune;
         private String district;
         private String voivodeship;
 
-        public MeasuringStationDetailsBuilder id(Long id) {
+        public Builder id(Long id) {
             this.id = id;
             return this;
         }
 
-        public MeasuringStationDetailsBuilder city(String city) {
+        public Builder city(String city) {
             this.city = city;
             return this;
         }
 
-        public MeasuringStationDetailsBuilder commune(String commune) {
+        public Builder commune(String commune) {
             this.commune = commune;
             return this;
         }
 
-        public MeasuringStationDetailsBuilder district(String district) {
+        public Builder district(String district) {
             this.district = district;
             return this;
         }
 
-        public MeasuringStationDetailsBuilder voivodeship(String voivodeship) {
+        public Builder voivodeship(String voivodeship) {
             this.voivodeship = voivodeship;
             return this;
         }
