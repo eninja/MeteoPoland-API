@@ -2,6 +2,7 @@ package pl.eninja.meteo.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 import springfox.documentation.annotations.ApiIgnore;
 
 @ApiIgnore
@@ -9,7 +10,7 @@ import springfox.documentation.annotations.ApiIgnore;
 public class WelcomeController {
 
     @RequestMapping("/")
-    public String redirectToUi() {
-        return "redirect:/swagger-ui.html#/";
+    public ModelAndView redirectToSwagger() {
+        return new ModelAndView("redirect:/swagger-ui.html#/");
     }
 }
