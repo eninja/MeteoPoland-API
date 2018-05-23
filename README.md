@@ -1,5 +1,6 @@
 # MeteoPoland-API
 [![Build Status](https://travis-ci.org/eninja/MeteoPoland-API.svg?branch=master)](https://travis-ci.org/eninja/MeteoPoland-API)
+[![codecov](https://codecov.io/gh/eninja/MeteoPoland-API/branch/master/graph/badge.svg)](https://codecov.io/gh/eninja/MeteoPoland-API)
 
 Spring Boot REST Service to obtain data from air and weather stations in Poland
 
