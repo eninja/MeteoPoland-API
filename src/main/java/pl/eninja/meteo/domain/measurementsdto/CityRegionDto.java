@@ -18,7 +18,7 @@ public class CityRegionDto {
     @Override
     public int hashCode() {
 
-        return Objects.hash(super.hashCode(), getCommuneName(), getDistrictName(), getVoivodeship());
+        return Objects.hash(communeName, districtName, voivodeship);
     }
 
     @Override
@@ -26,16 +26,14 @@ public class CityRegionDto {
         if (this == o) {
             return true;
         }
-        if (!(o instanceof CityRegionDto)) {
-            return false;
-        }
-        if (!super.equals(o)) {
+        if (o == null || getClass() != o.getClass()) {
             return false;
         }
         CityRegionDto that = (CityRegionDto) o;
-        return Objects.equals(getCommuneName(), that.getCommuneName()) && Objects.equals(getDistrictName(),
-                                                                                         that.getDistrictName()) && Objects
-                .equals(getVoivodeship(), that.getVoivodeship());
+        return Objects.equals(communeName, that.communeName) && Objects.equals(districtName,
+                                                                               that.districtName) && Objects.equals(
+                voivodeship,
+                that.voivodeship);
     }
 
     @Override

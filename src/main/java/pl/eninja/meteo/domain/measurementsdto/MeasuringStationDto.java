@@ -19,13 +19,7 @@ public class MeasuringStationDto {
     @Override
     public int hashCode() {
 
-        return Objects.hash(super.hashCode(),
-                            getId(),
-                            getStationName(),
-                            getGegrLat(),
-                            getGegrLon(),
-                            getAddressStreet(),
-                            getCityDto());
+        return Objects.hash(id, stationName, gegrLat, gegrLon, addressStreet, cityDto);
     }
 
     @Override
@@ -33,19 +27,15 @@ public class MeasuringStationDto {
         if (this == o) {
             return true;
         }
-        if (!(o instanceof MeasuringStationDto)) {
-            return false;
-        }
-        if (!super.equals(o)) {
+        if (o == null || getClass() != o.getClass()) {
             return false;
         }
         MeasuringStationDto that = (MeasuringStationDto) o;
-        return getId() == that.getId() && Objects.equals(getStationName(), that.getStationName()) && Objects.equals(
-                getGegrLat(),
-                that.getGegrLat()) && Objects.equals(getGegrLon(),
-                                                     that.getGegrLon()) && Objects.equals(getAddressStreet(),
-                                                                                          that.getAddressStreet()) && Objects
-                .equals(getCityDto(), that.getCityDto());
+        return id == that.id && Objects.equals(stationName, that.stationName) && Objects.equals(gegrLat,
+                                                                                                that.gegrLat) && Objects
+                .equals(gegrLon, that.gegrLon) && Objects.equals(addressStreet, that.addressStreet) && Objects.equals(
+                cityDto,
+                that.cityDto);
     }
 
     @Override
