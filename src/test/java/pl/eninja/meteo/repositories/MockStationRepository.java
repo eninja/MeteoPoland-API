@@ -9,7 +9,7 @@ import java.util.List;
 public class MockStationRepository {
 
     public List<MeasuringStation> stations() {
-        MockAirRepository mockAirRepository = new MockAirRepository();
+        MockAirMeasurementsRepository mockAirRepository = new MockAirMeasurementsRepository();
         MockSynopticRepository mockSynopticRepository = new MockSynopticRepository();
         List<MeasuringStation> result = new ArrayList<>();
 
@@ -23,7 +23,7 @@ public class MockStationRepository {
         station1.setCity("Warszawa");
         station1.setStationDetails(new MeasuringStationDetails());
         station1.setAirMeasurementsList(mockAirRepository.airMeasurements1());
-        station1.setSynopticMeasurements(mockSynopticRepository.synopticMeasurements1());
+        station1.setSynopticMeasurements(mockSynopticRepository.equalsList());
 
         MeasuringStation station2 = new MeasuringStation();
         station2.setId(1L);

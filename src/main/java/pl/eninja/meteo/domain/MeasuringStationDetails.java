@@ -27,7 +27,7 @@ public class MeasuringStationDetails {
     @Override
     public int hashCode() {
 
-        return Objects.hash(getId(), getCity(), getCommune(), getDistrict(), getVoivodeship());
+        return Objects.hash(id, city, commune, district, voivodeship);
     }
 
     @Override
@@ -35,15 +35,13 @@ public class MeasuringStationDetails {
         if (this == o) {
             return true;
         }
-        if (!(o instanceof MeasuringStationDetails)) {
+        if (o == null || getClass() != o.getClass()) {
             return false;
         }
         MeasuringStationDetails that = (MeasuringStationDetails) o;
-        return Objects.equals(getId(), that.getId()) && Objects.equals(getCity(), that.getCity()) && Objects.equals(
-                getCommune(),
-                that.getCommune()) && Objects.equals(getDistrict(),
-                                                     that.getDistrict()) && Objects.equals(getVoivodeship(),
-                                                                                           that.getVoivodeship());
+        return Objects.equals(id, that.id) && Objects.equals(city, that.city) && Objects.equals(commune,
+                                                                                                that.commune) && Objects
+                .equals(district, that.district) && Objects.equals(voivodeship, that.voivodeship);
     }
 
     public Long getId() {

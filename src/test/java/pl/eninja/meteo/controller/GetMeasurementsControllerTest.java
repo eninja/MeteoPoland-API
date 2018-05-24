@@ -16,7 +16,7 @@ import pl.eninja.meteo.domain.MeasurementsAirLevel;
 import pl.eninja.meteo.domain.MeasuringStation;
 import pl.eninja.meteo.domain.SynopticMeasurements;
 import pl.eninja.meteo.repositories.Converter;
-import pl.eninja.meteo.repositories.MockAirRepository;
+import pl.eninja.meteo.repositories.MockAirMeasurementsRepository;
 import pl.eninja.meteo.repositories.MockStationRepository;
 import pl.eninja.meteo.repositories.MockSynopticRepository;
 import pl.eninja.meteo.services.GetMeasurementsService;
@@ -27,7 +27,7 @@ import java.util.List;
 public class GetMeasurementsControllerTest {
     private final static String MAPPING = "/get";
     private final MockStationRepository mockStationRepository = new MockStationRepository();
-    private final MockAirRepository mockAirRepository = new MockAirRepository();
+    private final MockAirMeasurementsRepository mockAirRepository = new MockAirMeasurementsRepository();
     private final MockSynopticRepository mockSynopticRepository = new MockSynopticRepository();
     private final Converter converter = new Converter();
     @InjectMocks
@@ -61,7 +61,7 @@ public class GetMeasurementsControllerTest {
 
     @Test
     public void testFindAHottestPlaceByDate() throws Exception {
-        SynopticMeasurements synopticMeasurement = mockSynopticRepository.synopticMeasurements1().get(0);
+        SynopticMeasurements synopticMeasurement = mockSynopticRepository.equalsList().get(0);
         Mockito.when(service.getHottestPlaceGivenDate("2018-05-05")).thenReturn(synopticMeasurement);
         mockMvc.perform(MockMvcRequestBuilders.get(MAPPING + "/measurements/hottest").param("date", "2018-05-05"))
                .andExpect(MockMvcResultMatchers.content().json(converter.jsonInString(synopticMeasurement)));

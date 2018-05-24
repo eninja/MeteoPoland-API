@@ -20,7 +20,7 @@ import static org.mockito.Mockito.when;
 @RunWith(MockitoJUnitRunner.class)
 public class GetMeasurementsServiceImplTest {
     private final MockStationRepository mockStationRepository = new MockStationRepository();
-    private final MockAirRepository mockAirRepository = new MockAirRepository();
+    private final MockAirMeasurementsRepository mockAirRepository = new MockAirMeasurementsRepository();
     private final MockSynopticRepository mockSynopticRepository = new MockSynopticRepository();
 
     @InjectMocks
@@ -70,15 +70,15 @@ public class GetMeasurementsServiceImplTest {
 
     @Test
     public void getColdestPlaceGivenDate() {
-        when(synopticRepository.findAll()).thenReturn(mockSynopticRepository.synopticMeasurements1());
-        assertEquals(mockSynopticRepository.synopticMeasurements1().get(0),
+        when(synopticRepository.findAll()).thenReturn(mockSynopticRepository.equalsList());
+        assertEquals(mockSynopticRepository.equalsList().get(0),
                      service.getColdestPlaceGivenDate("2018-05-05"));
     }
 
     @Test
     public void getColdestPlaceGivenDate1() {
-        when(synopticRepository.findAll()).thenReturn(mockSynopticRepository.synopticMeasurements1());
-        assertThat(mockSynopticRepository.synopticMeasurements1(),
+        when(synopticRepository.findAll()).thenReturn(mockSynopticRepository.equalsList());
+        assertThat(mockSynopticRepository.equalsList(),
                    hasItem(service.getColdestPlaceGivenDate("2018-05-05")));
     }
 
@@ -91,8 +91,8 @@ public class GetMeasurementsServiceImplTest {
 
     @Test
     public void getcoldest10Places() {
-        when(synopticRepository.findAll()).thenReturn(mockSynopticRepository.synopticMeasurements1());
-        assertEquals(mockSynopticRepository.synopticMeasurements1(), service.getColdestPlaces());
+        when(synopticRepository.findAll()).thenReturn(mockSynopticRepository.equalsList());
+        assertEquals(mockSynopticRepository.equalsList(), service.getColdestPlaces());
     }
 
     @Test

@@ -3,7 +3,7 @@ package pl.eninja.meteo.domain.measurementsdto;
 import com.google.common.testing.EqualsTester;
 import org.junit.Test;
 
-public class AirMeasurementsDtoTest {
+public class AirMeasurementsDtoTest extends DtoTest<AirMeasurementsDto> {
 
     @Test
     public void equalsTest() {
@@ -18,5 +18,10 @@ public class AirMeasurementsDtoTest {
         dto2.setStIndexLevel(new LevelDto());
         dto2.setSo2IndexLevel(new LevelDto());
         new EqualsTester().addEqualityGroup(dto1, dto2).testEquals();
+    }
+
+    @Override
+    protected AirMeasurementsDto getInstance() {
+        return new AirMeasurementsDto();
     }
 }

@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MockAirRepository {
+public class MockAirMeasurementsRepository {
 
     public List<AirMeasurements> airMeasurements1() {
         LocalDateTime date = LocalDateTime.of(2018, 05, 05, 12, 01, 05);

@@ -2,10 +2,10 @@ package pl.eninja.meteo.domain;
 
 import com.google.common.testing.EqualsTester;
 import org.junit.Test;
-import pl.eninja.meteo.repositories.MockAirRepository;
+import pl.eninja.meteo.repositories.MockAirMeasurementsRepository;
 
 public class AirMeasurementsTest {
-    private MockAirRepository mockAirRepository = new MockAirRepository();
+    private MockAirMeasurementsRepository mockAirRepository = new MockAirMeasurementsRepository();
 
     @Test
     public void equalsTest() {

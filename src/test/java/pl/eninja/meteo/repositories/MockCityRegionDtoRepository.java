@@ -1,12 +1,13 @@
-package pl.eninja.meteo.domain.measurementsdto;
+package pl.eninja.meteo.repositories;
 
-import com.google.common.testing.EqualsTester;
-import org.junit.Test;
+import pl.eninja.meteo.domain.measurementsdto.CityRegionDto;
 
-public class CityRegionDtoTest extends DtoTest<CityRegionDto> {
+import java.util.ArrayList;
+import java.util.List;
 
-    @Test
-    public void equalsTest() {
+public class MockCityRegionDtoRepository {
+
+    public List<CityRegionDto> equalsList() {
         CityRegionDto cityRegionDto1 = new CityRegionDto();
         cityRegionDto1.setCommuneName("commune");
         cityRegionDto1.setDistrictName("district");
@@ -15,12 +16,9 @@ public class CityRegionDtoTest extends DtoTest<CityRegionDto> {
         cityRegionDto2.setCommuneName("commune");
         cityRegionDto2.setDistrictName("district");
         cityRegionDto2.setVoivodeship("voivodeship");
-
-        new EqualsTester().addEqualityGroup(cityRegionDto1, cityRegionDto2).testEquals();
-    }
-
-    @Override
-    protected CityRegionDto getInstance() {
-        return new CityRegionDto();
+        List<CityRegionDto> cityRegionDtoList = new ArrayList<>();
+        cityRegionDtoList.add(cityRegionDto1);
+        cityRegionDtoList.add(cityRegionDto2);
+        return cityRegionDtoList;
     }
 }
