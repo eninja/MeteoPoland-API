@@ -30,23 +30,23 @@ public class MeasuringStationOnLineMapper {
 
         SynopticMeasurementDto synop = Optional.ofNullable(synopticMeasurementDto).orElse(emptyObj());
         String cityName = measuringStationDto.getCityDto().getCityName();
-        return new MeasuringStationOnLine.MeasuringStationOnLineBuilder().id(measuringStationDto.getId())
-                                                                         .gegrLatitude(Double.parseDouble(
+        return new MeasuringStationOnLine.Builder().id(measuringStationDto.getId())
+                                                   .gegrLatitude(Double.parseDouble(
                                                                                  measuringStationDto.getGegrLat()))
-                                                                         .gegrLongitude(Double.parseDouble(
+                                                   .gegrLongitude(Double.parseDouble(
                                                                                  measuringStationDto.getGegrLon()))
-                                                                         .stationName(measuringStationDto.getStationName())
-                                                                         .stationStreet(measuringStationDto.getAddressStreet())
-                                                                         .stationCity(cityName)
-                                                                         .stationDistrict(measuringStationDto.getCityDto()
+                                                   .stationName(measuringStationDto.getStationName())
+                                                   .stationStreet(measuringStationDto.getAddressStreet())
+                                                   .stationCity(cityName)
+                                                   .stationDistrict(measuringStationDto.getCityDto()
                                                                                                              .getCityRegionDto()
                                                                                                              .getDistrictName())
-                                                                         .stationVoivodeship(measuringStationDto.getCityDto()
-                                                                                                                .getCityRegionDto()
-                                                                                                                .getVoivodeship())
-                                                                         .air(airMeasurementsDto)
-                                                                         .synoptics(synop)
-                                                                         .build();
+                                                   .stationVoivodeship(measuringStationDto.getCityDto()
+                                                                                          .getCityRegionDto()
+                                                                                          .getVoivodeship())
+                                                   .air(airMeasurementsDto)
+                                                   .synoptics(synop)
+                                                   .build();
     }
 
     private SynopticMeasurementDto emptyObj() {

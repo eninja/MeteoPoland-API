@@ -13,14 +13,14 @@ public class SynopticMeasurementMapper {
     public SynopticMeasurements maptToSynopticMeasurement(SynopticMeasurementDto synDto) {
         SynopticMeasurementDto synMeasurements = Optional.ofNullable(synDto).orElse(emptyObj());
         LocalDateTime currentDate = LocalDateTime.now();
-        return new SynopticMeasurements.SynopticMeasurementsBuilder().foreignId(synMeasurements.getId())
-                                                                     .city(synMeasurements.getCity())
-                                                                     .saveDate(currentDate)
-                                                                     .temperature(synMeasurements.getTemperature())
-                                                                     .windSpeed(synMeasurements.getWindSpeed())
-                                                                     .airHumidity(synMeasurements.getAirHumidity())
-                                                                     .pressure(synMeasurements.getPressure())
-                                                                     .build();
+        return new SynopticMeasurements.Builder().foreignId(synMeasurements.getId())
+                                                 .city(synMeasurements.getCity())
+                                                 .saveDate(currentDate)
+                                                 .temperature(synMeasurements.getTemperature())
+                                                 .windSpeed(synMeasurements.getWindSpeed())
+                                                 .airHumidity(synMeasurements.getAirHumidity())
+                                                 .pressure(synMeasurements.getPressure())
+                                                 .build();
     }
 
     private SynopticMeasurementDto emptyObj() {

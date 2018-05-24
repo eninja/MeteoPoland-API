@@ -34,21 +34,21 @@ public class MockOnlineRepository {
                                                                 9999,
                                                                 9999);
 
-        MeasuringStationOnLine msOnline = new MeasuringStationOnLine.MeasuringStationOnLineBuilder().id(1)
-                                                                                                    .gegrLatitude(0.0)
-                                                                                                    .gegrLongitude(0.0)
-                                                                                                    .stationName(
+        MeasuringStationOnLine msOnline = new MeasuringStationOnLine.Builder().id(1)
+                                                                              .gegrLatitude(0.0)
+                                                                              .gegrLongitude(0.0)
+                                                                              .stationName(
                                                                                                             "Test station")
-                                                                                                    .stationStreet(
+                                                                              .stationStreet(
                                                                                                             "test")
-                                                                                                    .stationCity("te")
-                                                                                                    .stationDistrict(
+                                                                              .stationCity("te")
+                                                                              .stationDistrict(
                                                                                                             "di")
-                                                                                                    .stationVoivodeship(
+                                                                              .stationVoivodeship(
                                                                                                             "vo")
-                                                                                                    .air(air)
-                                                                                                    .synoptics(syn)
-                                                                                                    .build();
+                                                                              .air(air)
+                                                                              .synoptics(syn)
+                                                                              .build();
         measuringStationOnLines.add(msOnline);
 
         return measuringStationOnLines;
@@ -75,52 +75,52 @@ public class MockOnlineRepository {
         SynopticMeasurementDto synM = new SynopticMeasurementDto(2, "->>no data available<<-", 1, 3, 4, 3);
         SynopticMeasurementDto synL = new SynopticMeasurementDto(3, "->>no data available<<-", 16, 9999, 9999, 9999);
 
-        MeasuringStationOnLine msOnline = new MeasuringStationOnLine.MeasuringStationOnLineBuilder().id(1)
-                                                                                                    .gegrLatitude(0.0)
-                                                                                                    .gegrLongitude(0.0)
-                                                                                                    .stationName(
+        MeasuringStationOnLine msOnline = new MeasuringStationOnLine.Builder().id(1)
+                                                                              .gegrLatitude(0.0)
+                                                                              .gegrLongitude(0.0)
+                                                                              .stationName(
                                                                                                             "Test station")
-                                                                                                    .stationStreet(
+                                                                              .stationStreet(
                                                                                                             "test")
-                                                                                                    .stationCity(
+                                                                              .stationCity(
                                                                                                             "Moskwa")
-                                                                                                    .stationDistrict(
+                                                                              .stationDistrict(
                                                                                                             "di")
-                                                                                                    .stationVoivodeship(
+                                                                              .stationVoivodeship(
                                                                                                             "vo")
-                                                                                                    .air(air)
-                                                                                                    .synoptics(syn)
-                                                                                                    .build();
-        MeasuringStationOnLine msOnline1 = new MeasuringStationOnLine.MeasuringStationOnLineBuilder().id(2)
-                                                                                                     .gegrLatitude(0.0)
-                                                                                                     .gegrLongitude(0.0)
-                                                                                                     .stationName(
+                                                                              .air(air)
+                                                                              .synoptics(syn)
+                                                                              .build();
+        MeasuringStationOnLine msOnline1 = new MeasuringStationOnLine.Builder().id(2)
+                                                                               .gegrLatitude(0.0)
+                                                                               .gegrLongitude(0.0)
+                                                                               .stationName(
                                                                                                              "Test station")
-                                                                                                     .stationStreet(
+                                                                               .stationStreet(
                                                                                                              "test")
-                                                                                                     .stationCity("te")
-                                                                                                     .stationDistrict(
+                                                                               .stationCity("te")
+                                                                               .stationDistrict(
                                                                                                              "di")
-                                                                                                     .stationVoivodeship(
+                                                                               .stationVoivodeship(
                                                                                                              "vo")
-                                                                                                     .air(air)
-                                                                                                     .synoptics(synL)
-                                                                                                     .build();
-        MeasuringStationOnLine msOnline2 = new MeasuringStationOnLine.MeasuringStationOnLineBuilder().id(3)
-                                                                                                     .gegrLatitude(0.0)
-                                                                                                     .gegrLongitude(0.0)
-                                                                                                     .stationName(
+                                                                               .air(air)
+                                                                               .synoptics(synL)
+                                                                               .build();
+        MeasuringStationOnLine msOnline2 = new MeasuringStationOnLine.Builder().id(3)
+                                                                               .gegrLatitude(0.0)
+                                                                               .gegrLongitude(0.0)
+                                                                               .stationName(
                                                                                                              "Test station")
-                                                                                                     .stationStreet(
+                                                                               .stationStreet(
                                                                                                              "test")
-                                                                                                     .stationCity("te")
-                                                                                                     .stationDistrict(
+                                                                               .stationCity("te")
+                                                                               .stationDistrict(
                                                                                                              "di")
-                                                                                                     .stationVoivodeship(
+                                                                               .stationVoivodeship(
                                                                                                              "vo")
-                                                                                                     .air(air)
-                                                                                                     .synoptics(synM)
-                                                                                                     .build();
+                                                                               .air(air)
+                                                                               .synoptics(synM)
+                                                                               .build();
         measuringStationOnLines.add(msOnline);
         measuringStationOnLines.add(msOnline1);
         measuringStationOnLines.add(msOnline2);
