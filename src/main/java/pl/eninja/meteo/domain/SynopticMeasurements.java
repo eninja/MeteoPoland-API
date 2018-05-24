@@ -29,7 +29,7 @@ public class SynopticMeasurements {
     public SynopticMeasurements() {
     }
 
-    private SynopticMeasurements(SynopticMeasurementsBuilder builder) {
+    private SynopticMeasurements(Builder builder) {
         this.foreignId = builder.foreignId;
         this.city = builder.city;
         this.saveDate = builder.saveDate;
@@ -120,7 +120,7 @@ public class SynopticMeasurements {
         this.measuringStation = measuringStation;
     }
 
-    public static class SynopticMeasurementsBuilder {
+    public static class Builder {
         private Long id;
         private int foreignId;
         private LocalDateTime saveDate;
@@ -131,47 +131,47 @@ public class SynopticMeasurements {
         private double pressure;
         private MeasuringStation measuringStation;
 
-        public SynopticMeasurementsBuilder id(Long id) {
+        public Builder id(Long id) {
             this.id = id;
             return this;
         }
 
-        public SynopticMeasurementsBuilder foreignId(int foreignId) {
+        public Builder foreignId(int foreignId) {
             this.foreignId = foreignId;
             return this;
         }
 
-        public SynopticMeasurementsBuilder saveDate(LocalDateTime saveDate) {
+        public Builder saveDate(LocalDateTime saveDate) {
             this.saveDate = saveDate;
             return this;
         }
 
-        public SynopticMeasurementsBuilder city(String city) {
+        public Builder city(String city) {
             this.city = city;
             return this;
         }
 
-        public SynopticMeasurementsBuilder temperature(double temperature) {
+        public Builder temperature(double temperature) {
             this.temperature = temperature;
             return this;
         }
 
-        public SynopticMeasurementsBuilder windSpeed(double windSpeed) {
+        public Builder windSpeed(double windSpeed) {
             this.windSpeed = windSpeed;
             return this;
         }
 
-        public SynopticMeasurementsBuilder airHumidity(double airHumidity) {
+        public Builder airHumidity(double airHumidity) {
             this.airHumidity = airHumidity;
             return this;
         }
 
-        public SynopticMeasurementsBuilder pressure(double pressure) {
+        public Builder pressure(double pressure) {
             this.pressure = pressure;
             return this;
         }
 
-        public SynopticMeasurementsBuilder measuringStation(MeasuringStation measuringStation) {
+        public Builder measuringStation(MeasuringStation measuringStation) {
             this.measuringStation = measuringStation;
             return this;
         }

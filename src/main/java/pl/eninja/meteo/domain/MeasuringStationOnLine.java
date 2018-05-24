@@ -18,7 +18,7 @@ public class MeasuringStationOnLine {
     private final SynopticMeasurementDto synoptics;
     private int id;
 
-    private MeasuringStationOnLine(MeasuringStationOnLineBuilder builder) {
+    private MeasuringStationOnLine(Builder builder) {
         this.id = builder.id;
         this.gegrLatitude = builder.gegrLatitude;
         this.gegrLongitude = builder.gegrLongitude;
@@ -114,7 +114,7 @@ public class MeasuringStationOnLine {
         return synoptics;
     }
 
-    public static class MeasuringStationOnLineBuilder {
+    public static class Builder {
         private int id;
         private double gegrLatitude;
         private double gegrLongitude;
@@ -126,52 +126,52 @@ public class MeasuringStationOnLine {
         private AirMeasurementsDto air;
         private SynopticMeasurementDto synoptics;
 
-        public MeasuringStationOnLineBuilder id(int id) {
+        public Builder id(int id) {
             this.id = id;
             return this;
         }
 
-        public MeasuringStationOnLineBuilder gegrLatitude(double gegrLatitude) {
+        public Builder gegrLatitude(double gegrLatitude) {
             this.gegrLatitude = gegrLatitude;
             return this;
         }
 
-        public MeasuringStationOnLineBuilder gegrLongitude(double gegrLongitude) {
+        public Builder gegrLongitude(double gegrLongitude) {
             this.gegrLongitude = gegrLongitude;
             return this;
         }
 
-        public MeasuringStationOnLineBuilder stationName(String stationName) {
+        public Builder stationName(String stationName) {
             this.stationName = stationName;
             return this;
         }
 
-        public MeasuringStationOnLineBuilder stationStreet(String stationStreet) {
+        public Builder stationStreet(String stationStreet) {
             this.stationStreet = stationStreet;
             return this;
         }
 
-        public MeasuringStationOnLineBuilder stationCity(String stationCity) {
+        public Builder stationCity(String stationCity) {
             this.stationCity = stationCity;
             return this;
         }
 
-        public MeasuringStationOnLineBuilder stationDistrict(String stationDistrict) {
+        public Builder stationDistrict(String stationDistrict) {
             this.stationDistrict = stationDistrict;
             return this;
         }
 
-        public MeasuringStationOnLineBuilder stationVoivodeship(String stationVoivodeship) {
+        public Builder stationVoivodeship(String stationVoivodeship) {
             this.stationVoivodeship = stationVoivodeship;
             return this;
         }
 
-        public MeasuringStationOnLineBuilder air(AirMeasurementsDto air) {
+        public Builder air(AirMeasurementsDto air) {
             this.air = air;
             return this;
         }
 
-        public MeasuringStationOnLineBuilder synoptics(SynopticMeasurementDto synoptics) {
+        public Builder synoptics(SynopticMeasurementDto synoptics) {
             this.synoptics = synoptics;
             return this;
         }
