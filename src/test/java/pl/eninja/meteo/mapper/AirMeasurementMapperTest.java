@@ -1,24 +1,21 @@
 package pl.eninja.meteo.mapper;
 
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.mockito.runners.MockitoJUnitRunner;
 import pl.eninja.meteo.domain.AirMeasurements;
-import pl.eninja.meteo.repositories.MockAirRepository;
-import pl.eninja.meteo.repositories.MockDto;
+import pl.eninja.meteo.repositories.MockAirMeasurementsDto;
+import pl.eninja.meteo.repositories.MockAirMeasurementsRepository;
 
 import static org.junit.Assert.assertEquals;
 
-@RunWith(MockitoJUnitRunner.class)
 public class AirMeasurementMapperTest {
-    private final MockAirRepository mockAirRepository = new MockAirRepository();
-    private final MockDto mockDto = new MockDto();
+    private final MockAirMeasurementsRepository mockAirRepository = new MockAirMeasurementsRepository();
+    private final MockAirMeasurementsDto mockAirMeasurementsDto = new MockAirMeasurementsDto();
     private final AirMeasurementMapper airMeasurementMapper = new AirMeasurementMapper();
 
     @Test
     public void testMapToAirMeasurements() {
         AirMeasurements expect = mockAirRepository.airMeasurement();
-        AirMeasurements result = airMeasurementMapper.mapToAirMeasurements(mockDto.airMeasurementsDto());
+        AirMeasurements result = airMeasurementMapper.mapToAirMeasurements(mockAirMeasurementsDto.airMeasurementsDto());
         assertEquals(expect, result);
     }
 }

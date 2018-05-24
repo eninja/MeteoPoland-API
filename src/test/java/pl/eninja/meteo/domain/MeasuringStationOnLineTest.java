@@ -2,24 +2,13 @@ package pl.eninja.meteo.domain;
 
 import com.google.common.testing.EqualsTester;
 import org.junit.Test;
+import pl.eninja.meteo.repositories.MockMeasuringStationOnLine;
 
 public class MeasuringStationOnLineTest {
+    private MockMeasuringStationOnLine mock = new MockMeasuringStationOnLine();
+
     @Test
     public void equalsTest() {
-        MeasuringStationOnLine station1 = new MeasuringStationOnLine.Builder().stationCity("city")
-                                                                              .stationDistrict("district")
-                                                                              .stationName("name")
-                                                                              .stationStreet("station")
-                                                                              .gegrLatitude(12.12)
-                                                                              .gegrLongitude(12.12)
-                                                                              .build();
-        MeasuringStationOnLine station2 = new MeasuringStationOnLine.Builder().stationCity("city")
-                                                                              .stationDistrict("district")
-                                                                              .stationName("name")
-                                                                              .stationStreet("station")
-                                                                              .gegrLatitude(12.12)
-                                                                              .gegrLongitude(12.12)
-                                                                              .build();
-        new EqualsTester().addEqualityGroup(station1, station2).testEquals();
+        new EqualsTester().addEqualityGroup(mock.equalList().get(0), mock.equalList().get(1)).testEquals();
     }
 }

@@ -3,7 +3,7 @@ package pl.eninja.meteo.repositories;
 import pl.eninja.meteo.domain.measurementsdto.AirMeasurementsDto;
 import pl.eninja.meteo.domain.measurementsdto.LevelDto;
 
-public class MockDto {
+public class MockAirMeasurementsDto {
 
     public AirMeasurementsDto airMeasurementsDto() {
         LevelDto stIndexLevel = new LevelDto.Builder().indexLevelName("stILevel").id(1).build();

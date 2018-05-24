@@ -3,7 +3,7 @@ package pl.eninja.meteo.domain.measurementsdto;
 import com.google.common.testing.EqualsTester;
 import org.junit.Test;
 
-public class MeasuringStationDtoTest {
+public class MeasuringStationDtoTest extends DtoTest<MeasuringStationDto> {
 
     @Test
     public void equalsTest() {
@@ -22,5 +22,10 @@ public class MeasuringStationDtoTest {
         stationDto2.setGegrLon("lon");
         stationDto2.setStationName("station");
         new EqualsTester().addEqualityGroup(stationDto1, stationDto2).testEquals();
+    }
+
+    @Override
+    protected MeasuringStationDto getInstance() {
+        return new MeasuringStationDto();
     }
 }
