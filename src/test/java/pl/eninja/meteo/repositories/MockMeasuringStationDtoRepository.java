@@ -1,5 +1,6 @@
 package pl.eninja.meteo.repositories;
 
+import pl.eninja.meteo.domain.measurementsdto.CityDto;
 import pl.eninja.meteo.domain.measurementsdto.MeasuringStationDto;
 
 import java.util.ArrayList;
@@ -28,5 +29,16 @@ public class MockMeasuringStationDtoRepository {
         dtoList.add(station1);
         dtoList.add(station2);
         return dtoList;
+    }
+
+    public MeasuringStationDto mapperStationDto() {
+        MeasuringStationDto stationDto = new MeasuringStationDto();
+        stationDto.setId(1);
+        stationDto.setStationName("station");
+        stationDto.setGegrLat("latitude");
+        stationDto.setGegrLon("longitude");
+        stationDto.setAddressStreet("street");
+        stationDto.setCityDto(new CityDto());
+        return stationDto;
     }
 }
