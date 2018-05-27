@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MockCityDtoRepository {
-    private MockCityRegionDtoRepository cityRegionDtoRepository = new MockCityRegionDtoRepository();
+    private final MockCityRegionDtoRepository cityRegionDtoRepository = new MockCityRegionDtoRepository();
 
     public List<CityDto> equalsList() {
         CityDto cityDto1 = new CityDto();

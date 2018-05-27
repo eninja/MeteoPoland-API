@@ -55,7 +55,7 @@ public class MeasuringOnlineControllerTest {
     }
 
     @Test
-    public void getHotestOnlineStationTest() throws Exception {
+    public void getHottestOnlineStationTest() throws Exception {
         MeasuringStationOnLine stationOnLine = mockMeasuringStationOnLine.equalList().get(0);
         when(measuringOnlineServices.getHottestOnlineStation()).thenReturn(stationOnLine);
         mockMvc.perform(MockMvcRequestBuilders.get(MAPPING + "/stations/hottest"))

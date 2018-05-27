@@ -19,11 +19,11 @@ public class AirMeasurements {
     private LocalDateTime saveDate;
     @Enumerated(value = EnumType.STRING)
     private MeasurementsAirLevel airQuality;
-    private String stIndexLevel; //powietrze ogólnie
-    private String so2IndexLevel; //dwutlenek siarki
-    private String no2IndexLevel; //dwutlenek azotu
-    private String coIndexLevel;//tlenek wegla
-    private String pm10IndexLevel; //pył zawieszony PM10
+    private String stIndexLevel;
+    private String so2IndexLevel;
+    private String no2IndexLevel;
+    private String coIndexLevel;
+    private String pm10IndexLevel;
     private String pm25IndexLevel;
     private String o3IndexLevel;
     private String c6h6IndexLevel;
@@ -35,7 +35,7 @@ public class AirMeasurements {
     public AirMeasurements() {
     }
 
-    private AirMeasurements(AirMaesurementsBuilder builder) {
+    private AirMeasurements(Builder builder) {
         this.foreignId = builder.foreignId;
         this.measurementDate = builder.measurementDate;
         this.saveDate = builder.saveDate;
@@ -156,88 +156,88 @@ public class AirMeasurements {
         this.measuringStation = measuringStation;
     }
 
-    public static class AirMaesurementsBuilder {
+    public static class Builder {
         private Long id;
         private int foreignId;
         private LocalDateTime measurementDate;
         private LocalDateTime saveDate;
         private MeasurementsAirLevel airQuality;
-        private String stIndexLevel; //powietrze ogólnie
-        private String so2IndexLevel; //dwutlenek siarki
-        private String no2IndexLevel; //dwutlenek azotu
-        private String coIndexLevel;//tlenek wegla
-        private String pm10IndexLevel; //pył zawieszony PM10
+        private String stIndexLevel;
+        private String so2IndexLevel;
+        private String no2IndexLevel;
+        private String coIndexLevel;
+        private String pm10IndexLevel;
         private String pm25IndexLevel;
         private String o3IndexLevel;
         private String c6h6IndexLevel;
         private MeasuringStation measuringStation;
 
-        public AirMaesurementsBuilder id(Long id) {
+        public Builder id(Long id) {
             this.id = id;
             return this;
         }
 
-        public AirMaesurementsBuilder foreignId(int foreignId) {
+        public Builder foreignId(int foreignId) {
             this.foreignId = foreignId;
             return this;
         }
 
-        public AirMaesurementsBuilder measurementDate(LocalDateTime measurementDate) {
+        public Builder measurementDate(LocalDateTime measurementDate) {
             this.measurementDate = measurementDate;
             return this;
         }
 
-        public AirMaesurementsBuilder saveDate(LocalDateTime saveDate) {
+        public Builder saveDate(LocalDateTime saveDate) {
             this.saveDate = saveDate;
             return this;
         }
 
-        public AirMaesurementsBuilder airQuality(MeasurementsAirLevel airQuality) {
+        public Builder airQuality(MeasurementsAirLevel airQuality) {
             this.airQuality = airQuality;
             return this;
         }
 
-        public AirMaesurementsBuilder stIndexLevel(String stIndexLevel) {
+        public Builder stIndexLevel(String stIndexLevel) {
             this.stIndexLevel = stIndexLevel;
             return this;
         }
 
-        public AirMaesurementsBuilder so2IndexLevel(String so2IndexLevel) {
+        public Builder so2IndexLevel(String so2IndexLevel) {
             this.so2IndexLevel = so2IndexLevel;
             return this;
         }
 
-        public AirMaesurementsBuilder no2IndexLevel(String no2IndexLevel) {
+        public Builder no2IndexLevel(String no2IndexLevel) {
             this.no2IndexLevel = no2IndexLevel;
             return this;
         }
 
-        public AirMaesurementsBuilder coIndexLevel(String coIndexLevel) {
+        public Builder coIndexLevel(String coIndexLevel) {
             this.coIndexLevel = coIndexLevel;
             return this;
         }
 
-        public AirMaesurementsBuilder pm10IndexLevel(String pm10IndexLevel) {
+        public Builder pm10IndexLevel(String pm10IndexLevel) {
             this.pm10IndexLevel = pm10IndexLevel;
             return this;
         }
 
-        public AirMaesurementsBuilder pm25IndexLevel(String pm25IndexLevel) {
+        public Builder pm25IndexLevel(String pm25IndexLevel) {
             this.pm25IndexLevel = pm25IndexLevel;
             return this;
         }
 
-        public AirMaesurementsBuilder o3IndexLevel(String o3IndexLevel) {
+        public Builder o3IndexLevel(String o3IndexLevel) {
             this.o3IndexLevel = o3IndexLevel;
             return this;
         }
 
-        public AirMaesurementsBuilder c6h6IndexLevel(String c6h6IndexLevel) {
+        public Builder c6h6IndexLevel(String c6h6IndexLevel) {
             this.c6h6IndexLevel = c6h6IndexLevel;
             return this;
         }
 
-        public AirMaesurementsBuilder measuringStation(MeasuringStation measuringStation) {
+        public Builder measuringStation(MeasuringStation measuringStation) {
             this.measuringStation = measuringStation;
             return this;
         }

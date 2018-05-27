@@ -21,15 +21,15 @@ public class MeasuringOnlineServicesImpl implements MeasuringOnlineServices {
     private final MeasuringStationRepository stRepository;
     private final MeasuringStationMapper stMapper;
     private final MeasuringStationDetailsMapper staDetMapper;
-    private final ApiSupplierRetriever apiSupplierRetriver;
+    private final ApiSupplierRetriever apiSupplierRetriever;
 
     @Autowired
-    public MeasuringOnlineServicesImpl(MeasurementStationProcessor msProc, MeasuringStationRepository stRepository, MeasuringStationMapper stMapper, MeasuringStationDetailsMapper staDetMapper, ApiSupplierRetriever apiSupplierRetriver) {
+    public MeasuringOnlineServicesImpl(MeasurementStationProcessor msProc, MeasuringStationRepository stRepository, MeasuringStationMapper stMapper, MeasuringStationDetailsMapper staDetMapper, ApiSupplierRetriever apiSupplierRetriever) {
         this.msProc = msProc;
         this.stRepository = stRepository;
         this.stMapper = stMapper;
         this.staDetMapper = staDetMapper;
-        this.apiSupplierRetriver = apiSupplierRetriver;
+        this.apiSupplierRetriever = apiSupplierRetriever;
     }
 
     @Override
@@ -64,7 +64,7 @@ public class MeasuringOnlineServicesImpl implements MeasuringOnlineServices {
     }
 
     public void addAllStations() {
-        for (MeasuringStationDto measuringStationDto : apiSupplierRetriver.measuringStationApiProcessor()) {
+        for (MeasuringStationDto measuringStationDto : apiSupplierRetriever.measuringStationApiProcessor()) {
             int id = measuringStationDto.getId();
             if (!stRepository.existsAllByStationId(id)) {
                 MeasuringStation measuringStation = stMapper.mapToMeasuringSt(measuringStationDto);

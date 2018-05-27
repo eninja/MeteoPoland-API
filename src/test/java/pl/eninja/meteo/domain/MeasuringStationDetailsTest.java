@@ -6,7 +6,7 @@ import pl.eninja.meteo.repositories.MockMeasuringStationDetailsRepository;
 
 public class MeasuringStationDetailsTest {
 
-    private MockMeasuringStationDetailsRepository repository = new MockMeasuringStationDetailsRepository();
+    private final MockMeasuringStationDetailsRepository repository = new MockMeasuringStationDetailsRepository();
 
     @Test
     public void equalsTest() {

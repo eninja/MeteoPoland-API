@@ -52,7 +52,7 @@ public class GetMeasurementsController {
     @ApiImplicitParam(required = true, name = "date", value = "Date in format: YYYY-MM-DD", paramType = "query")
     @RequestMapping(value = "/measurements/synoptic", method = RequestMethod.GET)
     public List<SynopticMeasurements> findAllSynopticMeasurementsByDate(String date) {
-        return getMeasurementsService.getSynopticMeasuremets(date);
+        return getMeasurementsService.getSynopticMeasurements(date);
     }
 
     @ApiOperation(value = "Get coldest place from given date")

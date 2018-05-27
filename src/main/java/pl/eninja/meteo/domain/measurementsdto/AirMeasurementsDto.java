@@ -9,13 +9,13 @@ public class AirMeasurementsDto {
 
     private int id;
     private String stCalcDate;
-    private LevelDto stIndexLevel; //powietrze ogólnie
-    private LevelDto so2IndexLevel; //dwutlenek siarki
+    private LevelDto stIndexLevel;
+    private LevelDto so2IndexLevel;
     private String so2SourceDataDate;
-    private LevelDto no2IndexLevel; //dwutlenek azotu
-    private LevelDto coIndexLevel;//tlenek wegla
+    private LevelDto no2IndexLevel;
+    private LevelDto coIndexLevel;
     private String coSourceDataDate;
-    private LevelDto pm10IndexLevel; //pył zawieszony PM10
+    private LevelDto pm10IndexLevel;
     private LevelDto pm25IndexLevel;
     private LevelDto o3IndexLevel;
     private LevelDto c6h6IndexLevel;

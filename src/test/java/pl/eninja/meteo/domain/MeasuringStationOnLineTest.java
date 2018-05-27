@@ -5,7 +5,7 @@ import org.junit.Test;
 import pl.eninja.meteo.repositories.MockMeasuringStationOnLine;
 
 public class MeasuringStationOnLineTest {
-    private MockMeasuringStationOnLine mock = new MockMeasuringStationOnLine();
+    private final MockMeasuringStationOnLine mock = new MockMeasuringStationOnLine();
 
     @Test
     public void equalsTest() {

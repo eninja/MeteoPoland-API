@@ -9,7 +9,5 @@ import java.util.List;
 public interface AirMeasurementRepository extends CrudRepository<AirMeasurements, Long> {
     List<AirMeasurements> findAll();
 
-    AirMeasurements findByMeasuringStationId(Long id);
-
     List<AirMeasurements> findAllByAirQuality(MeasurementsAirLevel measurementsAirLevel);
 }

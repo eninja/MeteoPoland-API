@@ -43,15 +43,15 @@ public class GetMeasurementsServiceImplTest {
     }
 
     @Test
-    public void getAllAirMeasurementesGivenDate() {
+    public void getAllAirMeasurementsGivenDate() {
         when(airRepository.findAll()).thenReturn(mockAirRepository.airMeasurements1());
         assertEquals(mockAirRepository.airMeasurements1(), service.getAirMeasurements("2018-05-05"));
     }
 
     @Test
-    public void getAllSynopticMeasurementesGivenDate() {
+    public void getAllSynopticMeasurementsGivenDate() {
         when(synopticRepository.findAll()).thenReturn(mockSynopticRepository.synopticMeasurements2());
-        assertEquals(mockSynopticRepository.synopticMeasurements2(), service.getSynopticMeasuremets("2018-05-11"));
+        assertEquals(mockSynopticRepository.synopticMeasurements2(), service.getSynopticMeasurements("2018-05-11"));
     }
 
     @Test
@@ -90,13 +90,13 @@ public class GetMeasurementsServiceImplTest {
     }
 
     @Test
-    public void getcoldest10Places() {
+    public void getColdestPlaces() {
         when(synopticRepository.findAll()).thenReturn(mockSynopticRepository.equalsList());
         assertEquals(mockSynopticRepository.equalsList(), service.getColdestPlaces());
     }
 
     @Test
-    public void getHottest10Places() {
+    public void getHottestPlaces() {
         when(synopticRepository.findAll()).thenReturn(mockSynopticRepository.synopticMeasurements2());
         assertEquals(mockSynopticRepository.synopticMeasurements2(), service.getHottestPlaces());
     }

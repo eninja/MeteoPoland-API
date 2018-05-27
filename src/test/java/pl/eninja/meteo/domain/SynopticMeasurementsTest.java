@@ -6,7 +6,7 @@ import pl.eninja.meteo.repositories.MockSynopticRepository;
 
 public class SynopticMeasurementsTest {
 
-    private MockSynopticRepository synopticRepository = new MockSynopticRepository();
+    private final MockSynopticRepository synopticRepository = new MockSynopticRepository();
 
     @Test
     public void equalsTest() {
