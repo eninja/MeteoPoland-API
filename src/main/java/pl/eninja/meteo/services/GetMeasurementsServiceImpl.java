@@ -52,7 +52,7 @@ public class GetMeasurementsServiceImpl implements GetMeasurementsService {
     }
 
     @Override
-    public List<SynopticMeasurements> getSynopticMeasuremets(String date) {
+    public List<SynopticMeasurements> getSynopticMeasurements(String date) {
         LocalDate localDate = LocalDate.parse(date, formatter);
         return synopticRepository.findAll()
                                  .stream()

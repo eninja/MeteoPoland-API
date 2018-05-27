@@ -43,23 +43,23 @@ public class AddMeasurementsServiceImpl implements AddMeasurementsService {
 
     @Transactional
     @Override
-    public String addMeasurements(int statioId) {
+    public String addMeasurements(int stationId) {
         int id = 0;
         long startTime1 = System.currentTimeMillis();
         for (MeasuringStationDto measuringStationDto : apiSupplierRetriever.measuringStationApiProcessor()) {
-            if (measuringStationDto.getId() == statioId) {
+            if (measuringStationDto.getId() == stationId) {
                 id = measuringStationDto.getId();
             }
         }
 
         if (id > 0) {
-            AirMeasurementsDto airDto = apiSupplierRetriever.airMeasurementsProcessor().get(statioId);
+            AirMeasurementsDto airDto = apiSupplierRetriever.airMeasurementsProcessor().get(stationId);
             measuringOnlineServices.addAllStations();
             SynopticMeasurementDto synoptic = new SynopticMeasurementDto();
             MeasuringStationDto msDto = new MeasuringStationDto();
 
             for (MeasuringStationDto measuringStationDto : apiSupplierRetriever.measuringStationApiProcessor()) {
-                if (measuringStationDto.getId() == statioId) {
+                if (measuringStationDto.getId() == stationId) {
                     msDto = measuringStationDto;
                     synoptic = Optional.ofNullable(apiSupplierRetriever.synopticMeasurementProcessor()
                                                                        .get(msDto.getCityDto().getCityName()))
@@ -67,7 +67,7 @@ public class AddMeasurementsServiceImpl implements AddMeasurementsService {
                 }
             }
 
-            MeasuringStation measuringStation = measuringStationRepository.findByStationId(statioId);
+            MeasuringStation measuringStation = measuringStationRepository.findByStationId(stationId);
 
             AirMeasurements airMeasurements = airMapper.mapToAirMeasurements(airDto);
             airRepository.save(airMeasurements);
@@ -84,7 +84,7 @@ public class AddMeasurementsServiceImpl implements AddMeasurementsService {
             double execution = (endTime1 - startTime1) / 60000.0;
             return "Measurement execution time: " + df2.format(execution) + " minutes, saved as below: \n" + measuringStation + "\n" + "######################################################################################### \n" + synopticMeasurements + "\n" + "######################################################################################### \n" + airMeasurements;
         }
-        return " No data for measuring station Id: " + statioId;
+        return " No data for measuring station Id: " + stationId;
     }
 
     //@Transactional

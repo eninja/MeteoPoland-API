@@ -7,6 +7,4 @@ import java.util.List;
 
 public interface SynopticMeasurementRepository extends CrudRepository<SynopticMeasurements, Long> {
     List<SynopticMeasurements> findAll();
-
-    SynopticMeasurements findByMeasuringStationId(Long id);
 }

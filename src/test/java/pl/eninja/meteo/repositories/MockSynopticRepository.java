@@ -9,7 +9,7 @@ import java.util.List;
 public class MockSynopticRepository {
 
     public List<SynopticMeasurements> equalsList() {
-        LocalDateTime date = LocalDateTime.of(2018, 05, 05, 12, 01);
+        LocalDateTime date = LocalDateTime.of(2018, 5, 5, 12, 1);
         SynopticMeasurements synopticMeasurements = new SynopticMeasurements.Builder().id(1L)
                                                                                       .foreignId(100)
                                                                                       .city("Warszawa")
@@ -36,7 +36,7 @@ public class MockSynopticRepository {
     }
 
     public List<SynopticMeasurements> synopticMeasurements2() {
-        LocalDateTime date = LocalDateTime.of(2018, 05, 11, 10, 20);
+        LocalDateTime date = LocalDateTime.of(2018, 5, 11, 10, 20);
         SynopticMeasurements synopticMeasurements = new SynopticMeasurements.Builder().id(11L)
                                                                                       .foreignId(111)
                                                                                       .city("Szczecien1")

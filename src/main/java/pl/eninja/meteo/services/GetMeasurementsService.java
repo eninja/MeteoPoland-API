@@ -14,7 +14,7 @@ public interface GetMeasurementsService {
 
     List<AirMeasurements> getAirMeasurements(MeasurementsAirLevel measurementsAirLevel);
 
-    List<SynopticMeasurements> getSynopticMeasuremets(String date);
+    List<SynopticMeasurements> getSynopticMeasurements(String date);
 
     SynopticMeasurements getHottestPlaceGivenDate(String date);
 

@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
 import static org.junit.Assert.assertEquals;
 
 public class LocalDateTimeAttributeConverterTest {
-    private LocalDateTimeAttributeConverter converter = new LocalDateTimeAttributeConverter();
+    private final LocalDateTimeAttributeConverter converter = new LocalDateTimeAttributeConverter();
 
     @Test
     public void convertToDatabaseColumnTest() {

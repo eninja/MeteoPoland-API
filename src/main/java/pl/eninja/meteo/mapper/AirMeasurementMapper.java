@@ -20,22 +20,21 @@ public class AirMeasurementMapper {
 
         LocalDateTime currentDate = LocalDateTime.now();
         LocalDateTime toSql = LocalDateTime.parse(airDto.getStCalcDate(), formatter);
-        return new AirMeasurements.AirMaesurementsBuilder().foreignId(airDto.getId())
-                                                           .measurementDate(toSql)
-                                                           .saveDate(currentDate.withNano(0))
-                                                           .airQuality(airQuality(airDto))
-                                                           .stIndexLevel(airDto.getStIndexLevel().getIndexLevelName())
-                                                           .so2IndexLevel(airDto.getSo2IndexLevel().getIndexLevelName())
-                                                           .no2IndexLevel(airDto.getNo2IndexLevel().getIndexLevelName())
-                                                           .coIndexLevel(airDto.getCoIndexLevel().getIndexLevelName())
-                                                           .pm10IndexLevel(airDto.getPm10IndexLevel()
+        return new AirMeasurements.Builder().foreignId(airDto.getId())
+                                            .measurementDate(toSql)
+                                            .saveDate(currentDate.withNano(0))
+                                            .airQuality(airQuality(airDto))
+                                            .stIndexLevel(airDto.getStIndexLevel().getIndexLevelName())
+                                            .so2IndexLevel(airDto.getSo2IndexLevel().getIndexLevelName())
+                                            .no2IndexLevel(airDto.getNo2IndexLevel().getIndexLevelName())
+                                            .coIndexLevel(airDto.getCoIndexLevel().getIndexLevelName())
+                                            .pm10IndexLevel(airDto.getPm10IndexLevel()
                                                                                  .getIndexLevelName())
-                                                           .pm25IndexLevel(airDto.getPm25IndexLevel()
+                                            .pm25IndexLevel(airDto.getPm25IndexLevel().getIndexLevelName())
+                                            .o3IndexLevel(airDto.getO3IndexLevel().getIndexLevelName())
+                                            .c6h6IndexLevel(airDto.getC6h6IndexLevel()
                                                                                  .getIndexLevelName())
-                                                           .o3IndexLevel(airDto.getO3IndexLevel().getIndexLevelName())
-                                                           .c6h6IndexLevel(airDto.getC6h6IndexLevel()
-                                                                                 .getIndexLevelName())
-                                                           .build();
+                                            .build();
     }
 
     public MeasurementsAirLevel airQuality(AirMeasurementsDto air) {

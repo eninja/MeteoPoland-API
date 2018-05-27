@@ -16,7 +16,7 @@ public class MeasuringStationOnLine {
     private final String stationVoivodeship;
     private final AirMeasurementsDto air;
     private final SynopticMeasurementDto synoptics;
-    private int id;
+    private final int id;
 
     private MeasuringStationOnLine(Builder builder) {
         this.id = builder.id;

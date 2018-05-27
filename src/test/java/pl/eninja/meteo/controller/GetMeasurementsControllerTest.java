@@ -86,7 +86,7 @@ public class GetMeasurementsControllerTest {
     @Test
     public void testfindAllSynopticMeasurementsByDate() throws Exception {
         List<SynopticMeasurements> synopticMeasurements = mockSynopticRepository.synopticMeasurements2();
-        Mockito.when((service.getSynopticMeasuremets("2018-05-11"))).thenReturn(synopticMeasurements);
+        Mockito.when((service.getSynopticMeasurements("2018-05-11"))).thenReturn(synopticMeasurements);
         mockMvc.perform(MockMvcRequestBuilders.get(MAPPING + "/measurements/synoptic").param("date", "2018-05-11"))
                .andExpect(MockMvcResultMatchers.content().json(converter.jsonInString(synopticMeasurements)));
     }
