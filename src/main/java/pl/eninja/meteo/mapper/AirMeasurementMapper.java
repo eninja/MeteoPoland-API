@@ -38,7 +38,7 @@ public class AirMeasurementMapper {
                                                            .build();
     }
 
-    private MeasurementsAirLevel airQuality(AirMeasurementsDto air) {
+    public MeasurementsAirLevel airQuality(AirMeasurementsDto air) {
         int l1 = air.getC6h6IndexLevel().getId();
         int l2 = air.getStIndexLevel().getId();
         int l3 = air.getNo2IndexLevel().getId();

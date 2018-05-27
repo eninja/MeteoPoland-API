@@ -25,4 +25,14 @@ public class MockMeasuringStation {
         stations.add(station2);
         return stations;
     }
+
+    public MeasuringStation mapperMeasuringStation() {
+        MeasuringStation station = new MeasuringStation();
+        station.setLatitude("latitude");
+        station.setLongitude("longitude");
+        station.setStationId(1);
+        station.setStationName("station");
+        station.setStreet("street");
+        return station;
+    }
 }
