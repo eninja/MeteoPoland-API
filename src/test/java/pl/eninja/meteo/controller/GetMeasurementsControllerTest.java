@@ -18,7 +18,7 @@ import pl.eninja.meteo.domain.SynopticMeasurements;
 import pl.eninja.meteo.repositories.Converter;
 import pl.eninja.meteo.repositories.MockAirMeasurementsRepository;
 import pl.eninja.meteo.repositories.MockStationRepository;
-import pl.eninja.meteo.repositories.MockSynopticRepository;
+import pl.eninja.meteo.repositories.MockSynopticMeasurementsRepository;
 import pl.eninja.meteo.services.GetMeasurementsService;
 
 import java.util.List;
@@ -28,7 +28,7 @@ public class GetMeasurementsControllerTest {
     private final static String MAPPING = "/get";
     private final MockStationRepository mockStationRepository = new MockStationRepository();
     private final MockAirMeasurementsRepository mockAirRepository = new MockAirMeasurementsRepository();
-    private final MockSynopticRepository mockSynopticRepository = new MockSynopticRepository();
+    private final MockSynopticMeasurementsRepository mockSynopticMeasurementsRepository = new MockSynopticMeasurementsRepository();
     private final Converter converter = new Converter();
     @InjectMocks
     private GetMeasurementsController controller;
@@ -61,7 +61,7 @@ public class GetMeasurementsControllerTest {
 
     @Test
     public void testFindAHottestPlaceByDate() throws Exception {
-        SynopticMeasurements synopticMeasurement = mockSynopticRepository.equalsList().get(0);
+        SynopticMeasurements synopticMeasurement = mockSynopticMeasurementsRepository.equalsList().get(0);
         Mockito.when(service.getHottestPlaceGivenDate("2018-05-05")).thenReturn(synopticMeasurement);
         mockMvc.perform(MockMvcRequestBuilders.get(MAPPING + "/measurements/hottest").param("date", "2018-05-05"))
                .andExpect(MockMvcResultMatchers.content().json(converter.jsonInString(synopticMeasurement)));
@@ -69,7 +69,7 @@ public class GetMeasurementsControllerTest {
 
     @Test
     public void testFindColdestPlaceByDate() throws Exception {
-        SynopticMeasurements synopticMeasurements = mockSynopticRepository.synopticMeasurements2().get(0);
+        SynopticMeasurements synopticMeasurements = mockSynopticMeasurementsRepository.synopticMeasurements2().get(0);
         Mockito.when(service.getColdestPlaceGivenDate("2018-05-05")).thenReturn(synopticMeasurements);
         mockMvc.perform(MockMvcRequestBuilders.get(MAPPING + "/measurements/coldest").param("date", "2018-05-05"))
                .andExpect(MockMvcResultMatchers.content().json(converter.jsonInString(synopticMeasurements)));
@@ -85,7 +85,7 @@ public class GetMeasurementsControllerTest {
 
     @Test
     public void testfindAllSynopticMeasurementsByDate() throws Exception {
-        List<SynopticMeasurements> synopticMeasurements = mockSynopticRepository.synopticMeasurements2();
+        List<SynopticMeasurements> synopticMeasurements = mockSynopticMeasurementsRepository.synopticMeasurements2();
         Mockito.when((service.getSynopticMeasurements("2018-05-11"))).thenReturn(synopticMeasurements);
         mockMvc.perform(MockMvcRequestBuilders.get(MAPPING + "/measurements/synoptic").param("date", "2018-05-11"))
                .andExpect(MockMvcResultMatchers.content().json(converter.jsonInString(synopticMeasurements)));
@@ -93,7 +93,7 @@ public class GetMeasurementsControllerTest {
 
     @Test
     public void testFindColdest10Places() throws Exception {
-        List<SynopticMeasurements> measurementsList = mockSynopticRepository.synopticMeasurements2();
+        List<SynopticMeasurements> measurementsList = mockSynopticMeasurementsRepository.synopticMeasurements2();
         Mockito.when(service.getColdestPlaces()).thenReturn(measurementsList);
         mockMvc.perform(MockMvcRequestBuilders.get(MAPPING + "/measurements/coldestTop"))
                .andExpect(MockMvcResultMatchers.content().json(converter.jsonInString(measurementsList)));
@@ -101,7 +101,7 @@ public class GetMeasurementsControllerTest {
 
     @Test
     public void testFindHottest10Places() throws Exception {
-        List<SynopticMeasurements> measurementsList = mockSynopticRepository.synopticMeasurements2();
+        List<SynopticMeasurements> measurementsList = mockSynopticMeasurementsRepository.synopticMeasurements2();
         Mockito.when(service.getHottestPlaces()).thenReturn(measurementsList);
         mockMvc.perform(MockMvcRequestBuilders.get(MAPPING + "/measurements/hottestTop"))
                .andExpect(MockMvcResultMatchers.content().json(converter.jsonInString(measurementsList)));

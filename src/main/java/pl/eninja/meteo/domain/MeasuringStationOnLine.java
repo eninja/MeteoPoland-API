@@ -34,16 +34,14 @@ public class MeasuringStationOnLine {
     @Override
     public int hashCode() {
 
-        return Objects.hash(getId(),
-                            getGegrLatitude(),
-                            getGegrLongitude(),
-                            getStationName(),
-                            getStationStreet(),
-                            getStationCity(),
-                            getStationDistrict(),
-                            getStationVoivodeship(),
-                            getAir(),
-                            getSynoptics());
+        return Objects.hash(gegrLatitude,
+                            gegrLongitude,
+                            stationName,
+                            stationStreet,
+                            stationCity,
+                            stationDistrict,
+                            stationVoivodeship,
+                            id);
     }
 
     @Override
@@ -51,22 +49,18 @@ public class MeasuringStationOnLine {
         if (this == o) {
             return true;
         }
-        if (!(o instanceof MeasuringStationOnLine)) {
+        if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        MeasuringStationOnLine that = (MeasuringStationOnLine) o;
-        return getId() == that.getId() && Double.compare(that.getGegrLatitude(),
-                                                         getGegrLatitude()) == 0 && Double.compare(that.getGegrLongitude(),
-                                                                                                   getGegrLongitude()) == 0 && Objects
-                .equals(getStationName(), that.getStationName()) && Objects.equals(getStationStreet(),
-                                                                                   that.getStationStreet()) && Objects.equals(
-                getStationCity(),
-                that.getStationCity()) && Objects.equals(getStationDistrict(),
-                                                         that.getStationDistrict()) && Objects.equals(
-                getStationVoivodeship(),
-                that.getStationVoivodeship()) && Objects.equals(getAir(),
-                                                                that.getAir()) && Objects.equals(getSynoptics(),
-                                                                                                 that.getSynoptics());
+        MeasuringStationOnLine station = (MeasuringStationOnLine) o;
+        return Double.compare(station.gegrLatitude, gegrLatitude) == 0 && Double.compare(station.gegrLongitude,
+                                                                                         gegrLongitude) == 0 && id == station.id && Objects
+                .equals(stationName, station.stationName) && Objects.equals(stationStreet,
+                                                                            station.stationStreet) && Objects.equals(
+                stationCity,
+                station.stationCity) && Objects.equals(stationDistrict, station.stationDistrict) && Objects.equals(
+                stationVoivodeship,
+                station.stationVoivodeship);
     }
 
     @Override

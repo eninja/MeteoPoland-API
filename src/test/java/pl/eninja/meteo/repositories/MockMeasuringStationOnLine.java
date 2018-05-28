@@ -123,4 +123,43 @@ public class MockMeasuringStationOnLine {
 
         return measuringStationOnLines;
     }
+
+    public MeasuringStationOnLine mapperObj() {
+
+        LevelDto lvl = new LevelDto.Builder().id(1).indexLevelName("test name").build();
+        AirMeasurementsDto air = new AirMeasurementsDto();
+        air.setId(1);
+        air.setStCalcDate("2018-04-26 12:06:33");
+        air.setStIndexLevel(lvl);
+        air.setSo2IndexLevel(lvl);
+        air.setSo2SourceDataDate("2018-04-26 12:06:33");
+        air.setNo2IndexLevel(lvl);
+        air.setCoIndexLevel(lvl);
+        air.setCoSourceDataDate("2018-04-26 12:06:33");
+        air.setPm10IndexLevel(lvl);
+        air.setPm25IndexLevel(lvl);
+        air.setO3IndexLevel(lvl);
+        air.setC6h6IndexLevel(lvl);
+
+        SynopticMeasurementDto syn = new SynopticMeasurementDto(9999,
+                                                                "->>no data available<<-",
+                                                                9999,
+                                                                9999,
+                                                                9999,
+                                                                9999);
+
+        MeasuringStationOnLine msOnline1 = new MeasuringStationOnLine.Builder().id(1)
+                                                                               .gegrLatitude(15.0)
+                                                                               .gegrLongitude(15.0)
+                                                                               .stationName("station")
+                                                                               .stationStreet("street")
+                                                                               .stationCity("city")
+                                                                               .stationDistrict("district")
+                                                                               .stationVoivodeship("voivodeship")
+                                                                               .air(air)
+                                                                               .synoptics(syn)
+                                                                               .build();
+
+        return msOnline1;
+    }
 }

@@ -6,7 +6,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MockSynopticRepository {
+public class MockSynopticMeasurementsRepository {
 
     public List<SynopticMeasurements> equalsList() {
         LocalDateTime date = LocalDateTime.of(2018, 5, 5, 12, 1);
@@ -70,5 +70,18 @@ public class MockSynopticRepository {
         synopticMeasurementsList.add(synopticMeasurements1);
         synopticMeasurementsList.add(synopticMeasurements2);
         return synopticMeasurementsList;
+    }
+
+    public SynopticMeasurements mockMapper() {
+        SynopticMeasurements measurements = new SynopticMeasurements.Builder().airHumidity(12.12)
+                                                                              .city("city")
+                                                                              .foreignId(1)
+                                                                              .pressure(12.12)
+                                                                              .pressure(12.12)
+                                                                              .windSpeed(20)
+                                                                              .temperature(22.22)
+                                                                              .build();
+
+        return measurements;
     }
 }

@@ -2,11 +2,11 @@ package pl.eninja.meteo.domain;
 
 import com.google.common.testing.EqualsTester;
 import org.junit.Test;
-import pl.eninja.meteo.repositories.MockSynopticRepository;
+import pl.eninja.meteo.repositories.MockSynopticMeasurementsRepository;
 
 public class SynopticMeasurementsTest {
 
-    private final MockSynopticRepository synopticRepository = new MockSynopticRepository();
+    private final MockSynopticMeasurementsRepository synopticRepository = new MockSynopticMeasurementsRepository();
 
     @Test
     public void equalsTest() {

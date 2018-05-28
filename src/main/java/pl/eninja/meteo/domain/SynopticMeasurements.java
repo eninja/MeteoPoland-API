@@ -43,15 +43,7 @@ public class SynopticMeasurements {
     @Override
     public int hashCode() {
 
-        return Objects.hash(getId(),
-                            getForeignId(),
-                            getCity(),
-                            getSaveDate(),
-                            getTemperature(),
-                            getWindSpeed(),
-                            getAirHumidity(),
-                            getPressure(),
-                            getMeasuringStation());
+        return Objects.hash(id, foreignId, city, temperature, windSpeed, airHumidity, pressure, measuringStation);
     }
 
     @Override
@@ -59,19 +51,17 @@ public class SynopticMeasurements {
         if (this == o) {
             return true;
         }
-        if (!(o instanceof SynopticMeasurements)) {
+        if (o == null || getClass() != o.getClass()) {
             return false;
         }
         SynopticMeasurements that = (SynopticMeasurements) o;
-        return getForeignId() == that.getForeignId() && Double.compare(that.getTemperature(),
-                                                                       getTemperature()) == 0 && Double.compare(that.getWindSpeed(),
-                                                                                                                getWindSpeed()) == 0 && Double
-                .compare(that.getAirHumidity(), getAirHumidity()) == 0 && Double.compare(that.getPressure(),
-                                                                                         getPressure()) == 0 && Objects.equals(
-                getId(),
-                that.getId()) && Objects.equals(getCity(), that.getCity()) && Objects.equals(getSaveDate(),
-                                                                                             that.getSaveDate()) && Objects
-                .equals(getMeasuringStation(), that.getMeasuringStation());
+        return foreignId == that.foreignId && Double.compare(that.temperature,
+                                                             temperature) == 0 && Double.compare(that.windSpeed,
+                                                                                                 windSpeed) == 0 && Double
+                .compare(that.airHumidity, airHumidity) == 0 && Double.compare(that.pressure,
+                                                                               pressure) == 0 && Objects.equals(id,
+                                                                                                                that.id) && Objects
+                .equals(city, that.city) && Objects.equals(measuringStation, that.measuringStation);
     }
 
     @Override

@@ -10,7 +10,7 @@ public class MockStationRepository {
 
     public List<MeasuringStation> stations() {
         MockAirMeasurementsRepository mockAirRepository = new MockAirMeasurementsRepository();
-        MockSynopticRepository mockSynopticRepository = new MockSynopticRepository();
+        MockSynopticMeasurementsRepository mockSynopticMeasurementsRepository = new MockSynopticMeasurementsRepository();
         List<MeasuringStation> result = new ArrayList<>();
 
         MeasuringStation station1 = new MeasuringStation();
@@ -23,7 +23,7 @@ public class MockStationRepository {
         station1.setCity("Warszawa");
         station1.setStationDetails(new MeasuringStationDetails());
         station1.setAirMeasurementsList(mockAirRepository.airMeasurements1());
-        station1.setSynopticMeasurements(mockSynopticRepository.equalsList());
+        station1.setSynopticMeasurements(mockSynopticMeasurementsRepository.equalsList());
 
         MeasuringStation station2 = new MeasuringStation();
         station2.setId(1L);
@@ -35,7 +35,7 @@ public class MockStationRepository {
         station2.setCity("Szczecin");
         station2.setStationDetails(new MeasuringStationDetails());
         station2.setAirMeasurementsList(mockAirRepository.airMeasurements2());
-        station2.setSynopticMeasurements(mockSynopticRepository.synopticMeasurements2());
+        station2.setSynopticMeasurements(mockSynopticMeasurementsRepository.synopticMeasurements2());
 
         result.add(station1);
         result.add(station2);

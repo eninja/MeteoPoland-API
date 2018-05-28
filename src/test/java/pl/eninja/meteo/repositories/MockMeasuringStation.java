@@ -28,8 +28,8 @@ public class MockMeasuringStation {
 
     public MeasuringStation mapperMeasuringStation() {
         MeasuringStation station = new MeasuringStation();
-        station.setLatitude("latitude");
-        station.setLongitude("longitude");
+        station.setLatitude("15");
+        station.setLongitude("15");
         station.setStationId(1);
         station.setStationName("station");
         station.setStreet("street");
