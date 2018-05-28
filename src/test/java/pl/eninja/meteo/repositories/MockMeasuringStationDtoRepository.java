@@ -1,6 +1,7 @@
 package pl.eninja.meteo.repositories;
 
 import pl.eninja.meteo.domain.measurementsdto.CityDto;
+import pl.eninja.meteo.domain.measurementsdto.CityRegionDto;
 import pl.eninja.meteo.domain.measurementsdto.MeasuringStationDto;
 
 import java.util.ArrayList;
@@ -35,10 +36,31 @@ public class MockMeasuringStationDtoRepository {
         MeasuringStationDto stationDto = new MeasuringStationDto();
         stationDto.setId(1);
         stationDto.setStationName("station");
-        stationDto.setGegrLat("latitude");
-        stationDto.setGegrLon("longitude");
+        stationDto.setGegrLat("15");
+        stationDto.setGegrLon("15");
         stationDto.setAddressStreet("street");
         stationDto.setCityDto(new CityDto());
+        return stationDto;
+    }
+
+    public MeasuringStationDto mapperOnlineStationDto() {
+        CityRegionDto cityRegionDto = new CityRegionDto();
+        cityRegionDto.setVoivodeship("voivodeship");
+        cityRegionDto.setDistrictName("district");
+        cityRegionDto.setCommuneName("commune");
+
+        CityDto cityDto = new CityDto();
+        cityDto.setId(1);
+        cityDto.setCityName("city");
+        cityDto.setCityRegionDto(cityRegionDto);
+
+        MeasuringStationDto stationDto = new MeasuringStationDto();
+        stationDto.setId(1);
+        stationDto.setStationName("station");
+        stationDto.setGegrLat("15");
+        stationDto.setGegrLon("15");
+        stationDto.setAddressStreet("street");
+        stationDto.setCityDto(cityDto);
         return stationDto;
     }
 }

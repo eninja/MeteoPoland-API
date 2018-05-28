@@ -21,7 +21,7 @@ import static org.mockito.Mockito.when;
 public class GetMeasurementsServiceImplTest {
     private final MockStationRepository mockStationRepository = new MockStationRepository();
     private final MockAirMeasurementsRepository mockAirRepository = new MockAirMeasurementsRepository();
-    private final MockSynopticRepository mockSynopticRepository = new MockSynopticRepository();
+    private final MockSynopticMeasurementsRepository mockSynopticMeasurementsRepository = new MockSynopticMeasurementsRepository();
 
     @InjectMocks
     private GetMeasurementsServiceImpl service;
@@ -50,35 +50,36 @@ public class GetMeasurementsServiceImplTest {
 
     @Test
     public void getAllSynopticMeasurementsGivenDate() {
-        when(synopticRepository.findAll()).thenReturn(mockSynopticRepository.synopticMeasurements2());
-        assertEquals(mockSynopticRepository.synopticMeasurements2(), service.getSynopticMeasurements("2018-05-11"));
+        when(synopticRepository.findAll()).thenReturn(mockSynopticMeasurementsRepository.synopticMeasurements2());
+        assertEquals(mockSynopticMeasurementsRepository.synopticMeasurements2(),
+                     service.getSynopticMeasurements("2018-05-11"));
     }
 
     @Test
     public void getHottestPlaceGivenDate() {
-        when(synopticRepository.findAll()).thenReturn(mockSynopticRepository.synopticMeasurements2());
-        assertEquals(mockSynopticRepository.synopticMeasurements2().get(0),
+        when(synopticRepository.findAll()).thenReturn(mockSynopticMeasurementsRepository.synopticMeasurements2());
+        assertEquals(mockSynopticMeasurementsRepository.synopticMeasurements2().get(0),
                      service.getHottestPlaceGivenDate("2018-05-11"));
     }
 
     @Test
     public void getHottestPlaceGivenDate1() {
-        when(synopticRepository.findAll()).thenReturn(mockSynopticRepository.synopticMeasurements2());
-        assertThat(mockSynopticRepository.synopticMeasurements2(),
+        when(synopticRepository.findAll()).thenReturn(mockSynopticMeasurementsRepository.synopticMeasurements2());
+        assertThat(mockSynopticMeasurementsRepository.synopticMeasurements2(),
                    hasItem(service.getHottestPlaceGivenDate("2018-05-11")));
     }
 
     @Test
     public void getColdestPlaceGivenDate() {
-        when(synopticRepository.findAll()).thenReturn(mockSynopticRepository.equalsList());
-        assertEquals(mockSynopticRepository.equalsList().get(0),
+        when(synopticRepository.findAll()).thenReturn(mockSynopticMeasurementsRepository.equalsList());
+        assertEquals(mockSynopticMeasurementsRepository.equalsList().get(0),
                      service.getColdestPlaceGivenDate("2018-05-05"));
     }
 
     @Test
     public void getColdestPlaceGivenDate1() {
-        when(synopticRepository.findAll()).thenReturn(mockSynopticRepository.equalsList());
-        assertThat(mockSynopticRepository.equalsList(),
+        when(synopticRepository.findAll()).thenReturn(mockSynopticMeasurementsRepository.equalsList());
+        assertThat(mockSynopticMeasurementsRepository.equalsList(),
                    hasItem(service.getColdestPlaceGivenDate("2018-05-05")));
     }
 
@@ -91,13 +92,13 @@ public class GetMeasurementsServiceImplTest {
 
     @Test
     public void getColdestPlaces() {
-        when(synopticRepository.findAll()).thenReturn(mockSynopticRepository.equalsList());
-        assertEquals(mockSynopticRepository.equalsList(), service.getColdestPlaces());
+        when(synopticRepository.findAll()).thenReturn(mockSynopticMeasurementsRepository.equalsList());
+        assertEquals(mockSynopticMeasurementsRepository.equalsList(), service.getColdestPlaces());
     }
 
     @Test
     public void getHottestPlaces() {
-        when(synopticRepository.findAll()).thenReturn(mockSynopticRepository.synopticMeasurements2());
-        assertEquals(mockSynopticRepository.synopticMeasurements2(), service.getHottestPlaces());
+        when(synopticRepository.findAll()).thenReturn(mockSynopticMeasurementsRepository.synopticMeasurements2());
+        assertEquals(mockSynopticMeasurementsRepository.synopticMeasurements2(), service.getHottestPlaces());
     }
 }
