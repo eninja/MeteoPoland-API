@@ -8,12 +8,8 @@ addons:
       secure: $SONAR_TOKEN
 
 script:
-  # the following command line builds the project, runs the tests with coverage and then execute the SonarCloud analysis
   - 'mvn cobertura:cobertura'
-  - 'if [ "$TRAVIS_JDK_VERSION" == "oraclejdk8" ]; then
-    echo "Running sonar only for JDK version: $TRAVIS_JDK_VERSION";
-    travis_wait 45 mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar || travis_terminate 1;
-    fi';
+  - 'mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar'
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
