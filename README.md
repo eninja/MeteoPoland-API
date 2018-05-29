@@ -1,6 +1,8 @@
 # MeteoPoland-API
 [![Build Status](https://travis-ci.org/eninja/MeteoPoland-API.svg?branch=master)](https://travis-ci.org/eninja/MeteoPoland-API)
-[![codecov](https://codecov.io/gh/eninja/MeteoPoland-API/branch/master/graph/badge.svg)](https://codecov.io/gh/eninja/MeteoPoland-API)
+[![codecov](https://codecov.io/gh/eninja/MeteoPoland-API/branch/master/graph/badge.svg)](https://codecov.io/gh/eninja/MeteoPoland-API)[
+![sonarcloud](https://sonarcloud.io/api/project_badges/measure?project=pl.eninja%3Ameteo-poland&metric=alert_status)](https://sonarcloud.io/dashboard?id=pl.eninja%3Ameteo-poland)
+
 
 Spring Boot REST Service to obtain data from air and weather stations in Poland
 
