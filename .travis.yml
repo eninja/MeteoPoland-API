@@ -8,8 +8,7 @@ addons:
       secure: $SONAR_TOKEN
 
 script:
-  - 'mvn cobertura:cobertura'
-  - 'mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar'
+  - 'mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent cobertura:cobertura install sonar:sonar'
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
